@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Solución anterior — Procedimiento Inspector y Recaudación (ATC)</title>
+  <meta name="description" content="Solución organizada por temas y preguntas. Preparación técnico tributario — Agencia Tributaria Canaria.">
+  <style>
+    :root{
+      --bg:#0b0b0f;
+      --panel:#13131a;
+      --ink:#e8e8f0;
+      --muted:#b6b8c6;
+      --accent:#00e0ff;
+      --accent-2:#8af5ff;
+      --ok:#26d07c;
+      --warn:#ffcc00;
+      --err:#ff5f5f;
+    }
+    html,body{height:100%}
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--ink);
+      font:16px/1.55 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      text-rendering:optimizeLegibility;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+    a{color:var(--accent); text-decoration:none}
+    a:hover{color:var(--accent-2); text-decoration:underline}
+    .wrap{
+      max-width: 1024px;
+      margin: 0 auto;
+      padding: 24px 20px 60px;
+    }
+    header.site{
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(6px);
+      background: color-mix(in oklab, var(--bg) 85%, transparent);
+      border-bottom: 1px solid #1d1d26;
+      z-index: 5;
+    }
+    header .wrap{padding: 16px 20px}
+    h1,h2,h3{
+      line-height:1.2;
+      margin: 0 0 12px 0;
+    }
+    h1{
+      font-size: 1.8rem;
+      color: var(--accent);
+      letter-spacing: .2px;
+    }
+    h2{
+      font-size: 1.35rem;
+      color: #dfe8ff;
+      margin-top: 28px;
+      border-left: 4px solid var(--accent);
+      padding-left: 10px;
+    }
+    h3{
+      font-size: 1.05rem;
+      color: #e9ecff;
+      margin-top: 20px;
+    }
+    .meta{
+      color: var(--muted);
+      font-size:.92rem;
+      margin-top:2px;
+    }
+    .panel{
+      background: var(--panel);
+      border: 1px solid #222334;
+      border-radius: 12px;
+      padding: 18px 16px;
+      margin: 16px 0 22px;
+    }
+    .note{
+      border-left: 4px solid var(--accent);
+      padding-left: 12px;
+    }
+    .ok{color:var(--ok)}
+    .warn{color:var(--warn)}
+    .err{color:var(--err)}
+    code, pre{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+      background: #0f111a;
+      color: #d7e1ff;
+      border: 1px solid #222334;
+      border-radius: 8px;
+    }
+    code{padding: .15rem .35rem}
+    pre{padding: 14px; overflow:auto}
+    ul{margin: 8px 0 16px 22px}
+    li{margin: 6px 0}
+    .toc{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 10px;
+    }
+    .toc a{
+      display:block; padding:10px 12px; border:1px solid #222334; border-radius:10px; background:#0f1016;
+    }
+    footer{
+      margin-top: 40px;
+      color: var(--muted);
+      font-size:.92rem;
+      border-top:1px solid #1d1d26;
+      padding-top: 18px;
+    }
+    details{
+      background:#10121a;
+      border:1px solid #222334;
+      border-radius:10px;
+      padding:12px 14px;
+      margin: 14px 0;
+    }
+    details summary{
+      cursor:pointer;
+      color:#dfe8ff;
+      font-weight:600;
+    }
+    .tag{
+      display:inline-block;
+      font-size:.78rem;
+      padding:2px 8px;
+      border:1px solid #2a2b3c;
+      border-radius:999px;
+      color:#bfc6de;
+      margin-right:6px;
+    }
+    .small{font-size:.9rem}
+  </style>
+</head>
+<body>
+  <header class="site">
+    <div class="wrap">
+      <h1>Solución — Procedimiento Inspector y Recaudación (ATC)</h1>
+      <div class="meta">
+        Web estática de una sola página (fondo negro) para GitHub Pages. Última edición: <span id="today">hoy</span>.
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="panel note">
+      <p><strong>Nota</strong>: Esta página embebe la “solución anterior”. Si alguna parte de tu solución quedó recortada en el chat, pega el texto faltante en las secciones correspondientes. Puedes guardar este archivo como <code>index.html</code> y publicarlo en GitHub Pages sin dependencias externas.</p>
+      <details>
+        <summary>Cómo publicar en GitHub Pages (plan gratuito)</summary>
+        <ol>
+          <li>Crea un nuevo repositorio en GitHub y súbele este archivo como <code>index.html</code>.</li>
+          <li>Ve a Settings → Pages → “Build and deployment” → Source: “Deploy from a branch”.</li>
+          <li>Selecciona la rama (p. ej., <code>main</code>) y la carpeta <code>/root</code>. Guarda.</li>
+          <li>Espera a que aparezca la URL pública de Pages; suele ser <code>https://tuusuario.github.io/nombre-repo/</code>.</li>
+        </ol>
+      </details>
+    </section>
+
+    <section>
+      <h2 id="introduccion">Introducción</h2>
+      <p>Eres un experto legal y pedagogo, especialista en derecho administrativo, mercantil y civil. A continuación se presenta la solución organizada por temas y por preguntas, incluyendo referencias normativas vigentes y explicaciones claras.</p>
+      <p class="small">
+        Normativa aplicada (vigente): 
+        <span class="tag">LGT (Ley 58/2003)</span>
+        <span class="tag">RGAT (RD 1065/2007)</span>
+        <span class="tag">RGR (RD 939/2005)</span>
+        <span class="tag">LPAC (Ley 39/2015)</span>
+        <span class="tag">Revisión y vía económico-administrativa</span>
+      </p>
+    </section>
+
+    <section>
+      <h2 id="indice">Índice</h2>
+      <nav class="toc">
+        <a href="#parte-1">Parte 1. Actuaciones y procedimientos de gestión</a>
+        <a href="#parte-2">Parte 2. Procedimiento inspector (IGIC 2017-2020)</a>
+        <a href="#parte-3">Parte 3. Recaudación: recargos, intereses y garantías</a>
+        <a href="#instrucciones">Instrucciones finales y notas</a>
+      </nav>
+    </section>
+
+    <section id="parte-1">
+      <h2>Parte 1. Actuaciones y procedimientos de gestión</h2>
+
+      <article class="panel">
+        <h3>Comprobación limitada sobre JAYSA</h3>
+        <p>A continuación se resuelve, por temas y por preguntas, cada cuestión planteada. En todos los casos se aplica la normativa vigente (LGT, RGAT, RGR, LPAC y normativa de revisión y económico-administrativa).</p>
+        <ul>
+          <li><strong>Ámbito de la comprobación limitada</strong> (art. 136 LGT): se permite requerir libros registro de IVA/IGIC y justificantes, y contrastar datos con terceros; no se examina la contabilidad mercantil ni se actúa fuera de oficina (art. 136.2 LGT).</li>
+          <li><strong>Verificación de datos</strong> no es el cauce idóneo para cuestiones complejas (art. 137 LGT).</li>
+          <li>En recaudación, diferenciar correctamente <strong>recargos e intereses</strong>:
+            <ul>
+              <li>Recargo ejecutivo reducido del 10% si se ingresa íntegramente dentro del plazo de la providencia de apremio.</li>
+              <li>Recargo ordinario del 20% si el ingreso es posterior, más intereses de demora y costas del procedimiento (arts. 161, 163 y 167 LGT; RGR).</li>
+            </ul>
+          </li>
+        </ul>
+
+        <details>
+          <summary>Insertar aquí desarrollo adicional de preguntas de gestión</summary>
+          <p>
+		  a) ¿Pueden los órganos de Gestión Tributaria solicitar los libros de IVA? Sí. En un procedimiento de comprobación limitada la Administración puede requerir y examinar los libros registro exigidos por la normativa tributaria (por ejemplo, los libros registro de IVA), así como facturas y demás justificantes, pero no la contabilidad mercantil en sentido estricto ni realizar actuaciones fuera de las oficinas de la Administración (arts. 136.2 LGT y 164 RGAT).
+		  
+		  b) ¿En un procedimiento de comprobación limitada es correcto que la Administración solicite a EL DELANTAL los justificantes de las operaciones declaradas en el modelo 347? Sí. La Administración puede contrastar datos con terceros y requerirles información y justificantes con trascendencia tributaria (arts. 93 y 94 LGT). Ese requerimiento a EL DELANTAL es una actuación de obtención de información compatible con una comprobación limitada abierta a JAYSA (art. 136.2 y 3 LGT).
+		  
+		  c) ¿Puede la Administración conceder a EL DELANTAL ampliación del plazo para atender al requerimiento y, en su caso, qué ampliación podría haberse concedido? Sí, cabe ampliación si se solicita antes de vencer el plazo y se justifican las razones, sin perjuicio de terceros. La ampliación no puede exceder de la mitad del plazo inicialmente concedido (art. 32.1 LPAC, de aplicación supletoria; arts. 97 LGT y 91 RGAT sobre plazos y requerimientos). Si el requerimiento fue de 10 días hábiles, la ampliación máxima era de 5 días hábiles.
+		  
+		  d) ¿Ha excedido la Administración el plazo que tenía para resolver? No. El procedimiento de comprobación limitada tiene un plazo máximo de 6 meses para notificar la liquidación (art. 104.1 LGT). En el caso, la propuesta se notificó el 3 de octubre de 2019 y la liquidación provisional quedó a disposición en la DEH el 13 de diciembre de 2019, accediéndose el 17 de diciembre de 2019: muy dentro de los 6 meses. El cómputo del plazo comienza con la primera actuación formal de inicio frente a JAYSA (aquí, la propuesta de liquidación del 3 de octubre), no con el requerimiento a un tercero.
+		  
+		  e) ¿En qué momento se entiende finalizado el procedimiento? Con la notificación de la liquidación provisional. En notificaciones electrónicas, la fecha de notificación es la del acceso o, si no se accede, la del transcurso de 10 días naturales desde la puesta a disposición (arts. 41 y 43 LPAC; arts. 112 y 104 LGT, en lo procedente). Aquí: 17 de diciembre de 2019.
+		  
+		  f) En caso de que la Administración hubiera excedido el plazo ¿Podría iniciarse una nueva actuación? Sí. La caducidad obligaría a archivar, pero no impide iniciar un nuevo procedimiento sobre los mismos hechos y periodos dentro del plazo de prescripción; las actuaciones del procedimiento caducado no interrumpen la prescripción (art. 104.5 LGT).
+		  
+		  g) A la vista del recurso ante el TEAR ¿Cómo puede proceder la Administración? Remitir el expediente al TEAR con su informe (arts. 235 y 236 LGT; RD 520/2005). Satisfacción extraprocesal: reconocer la pretensión del interesado y dejar sin efecto la liquidación (allanamiento o revocación) si aprecia vicios, lo que determinaría la terminación del procedimiento revisor (arts. 239 LGT y 66-68 RD 520/2005; art. 219 LGT sobre revocación; art. 220 LGT sobre rectificación de errores). Oponerse fundadamente ante el TEAR si considera correcto el acto.</p>
+        </details>
+      </article>
+    </section>
+
+    <section id="parte-2">
+      <h2>Parte 2. Procedimiento inspector (IGIC 2017-2020)</h2>
+      <article class="panel">
+        <h3>Datos del caso</h3>
+        <ul>
+          <li><strong>Inicio inspección</strong>: 16/04/2021 (alcance general, periodos 2017-2020).</li>
+          <li><strong>Trámite de audiencia</strong>: 22/11/2022.</li>
+          <li><strong>Firma de acta (disconformidad)</strong>: 15/12/2022.</li>
+          <li><strong>Notificación de liquidación definitiva</strong>: 25/01/2023 (cuotas 1T 2017 a 4T 2020 e intereses de demora).</li>
+        </ul>
+        <p>Constataciones de la Inspección: inexistencia de contabilidad que refleje la imagen fiel; ausencia de libro registro de IGIC; [completar con el resto de hechos si procede].</p>
+      </article>
+
+      <article class="panel">
+        <h3>Cuestiones jurídicas clave y respuesta</h3>
+        <ul>
+          <li><strong>Plazos inspector y caducidad</strong>: cómputo y efectos conforme a arts. 150 y 104 LGT; interrupciones justificadas y dilaciones no imputables.</li>
+          <li><strong>Alcance de la regularización</strong>: facultades de comprobación (arts. 141-142 LGT) y documentación exigible; valoración de la falta de libros/contabilidad (presunciones, art. 108 LGT y régimen sancionador).</li>
+          <li><strong>Intereses de demora</strong>: devengo y cálculo (art. 26 LGT) desde el fin del periodo voluntario originario hasta la liquidación definitiva.</li>
+          <li><strong>Actas en disconformidad</strong>: efectos, trámite de audiencia y resolución (RGAT, arts. 186 y ss.).</li>
+        </ul>
+
+        <details>
+          <summary>Insertar aquí la resolución detallada y fundamentación</summary>
+          <p>
+		  a) ¿Qué actuaciones podrían realizar los órganos de gestión tributaria? 
+		  
+		  Iniciar el procedimiento de revocación del NIF y/o baja de oficio en el censo por concurrir causas (entre ellas, insolvencia o indicios de utilización fraudulenta), con la consiguiente exclusión de registros (ROI, REDEME, exportadores, etc.) (art. 147 LGT y arts. 146 y ss. RGAT). 
+		  Efectuar bajas de oficio en el Censo de Empresarios, Profesionales y Retenedores y en registros específicos, y denegar/expulsar de regímenes especiales cuando proceda (arts. 146 y 147 RGAT). 
+		  Acordar compensación de oficio de posibles devoluciones o créditos futuros con deudas pendientes (arts. 71 y 73 LGT; arts. 55 y ss. RGR).
+		  Comunicar a órganos de recaudación e inspección para eventuales derivaciones de responsabilidad (aunque su tramitación es típicamente de recaudación) y para control censal.
+		  
+		  b) ¿Qué consecuencias tendría para la entidad esas actuaciones?
+		  
+		  Revocación del NIF y baja censal: imposibilidad de operar con normalidad (expedir facturas con efectos fiscales, obtener devoluciones, inscribirse en registros, realizar operaciones intracomunitarias), inadmisión de autoliquidaciones, y publicidad de la revocación hasta su rehabilitación (art. 147 LGT y RGAT).
+		  Exclusión de registros/regímenes: pérdida de beneficios o simplificaciones (ROI/REDEME).
+		  Compensaciones de oficio de devoluciones futuras con deudas pendientes.</p>
+        </details>
+      </article>
+    </section>
+
+    <section id="parte-3">
+      <h2>Parte 3. Recaudación: recargos, intereses y garantías</h2>
+
+      <article class="panel">
+        <h3>a) Cálculo de importes y garantías (alternativas 1 a 4)</h3>
+        <p>Se determina, para cada alternativa, el importe de la deuda sobre el que solicitar aplazamiento y, en su caso, el importe a garantizar según RGR y la Instrucción de garantías aplicable.</p>
+        <ul>
+          <li><strong>Alternativas 1 y 3</strong>: [Importes específicos y motivación].</li>
+          <li><strong>Alternativa 2</strong>: Importe de deuda objeto de aplazamiento y necesidad de garantía; cálculo del importe garantizable (principal + intereses estimados + recargos/costas si proceden).</li>
+          <li><strong>Alternativa 4</strong>: Importe a garantizar y tipo de garantía admisible (aval, seguro de caución, hipoteca mobiliaria/prendaria) conforme a arts. 82 y 224 LGT, 46 y ss. RGR.</li>
+        </ul>
+        <details>
+          <summary>Insertar aquí el detalle numérico completo</summary>
+          <p>
+		  a) Adecuación del procedimiento utilizado
+		  Inadecuada tras las alegaciones. La verificación de datos (art. 137 LGT) se reserva a discrepancias simples, errores materiales o contrastes con datos ya obrantes, sin requerir un análisis jurídico complejo ni comprobaciones adicionales relevantes. La exención por trabajos realizados en el extranjero (art. 7.p LIRPF) exige verificar hechos y realizar una valoración jurídica compleja (trabajo efectivamente realizado en el extranjero, entidad destinataria, existencia de impuesto análogo, límites cuantitativos), lo que excede del alcance de la verificación de datos. La Administración debió finalizar este procedimiento sin liquidar y, en su caso, iniciar una comprobación limitada (arts. 136 LGT y 164 RGAT) o inspección.
+		  
+		  b) Iniciación del procedimiento directamente a través de una propuesta de liquidación 
+		  Es correcto que la verificación de datos pueda iniciarse mediante propuesta de liquidación (art. 137 LGT y normativa de gestión). Lo que resulta incorrecto no es la forma de inicio, sino mantener la verificación de datos cuando las alegaciones abren cuestiones fácticas y jurídicas complejas.
+		  
+		  c) Presunciones y pruebas utilizadas 
+		  Sobre los rendimientos imputados por JAYSA: la información de terceros (modelos 190/347 o similares) es un indicio, pero si el contribuyente lo niega, la Administración debe acreditar el hecho imponible (percepción de rentas) con mayor solidez, por ejemplo, requiriendo al pagador, analizando movimientos bancarios u otros justificantes (art. 105.1 LGT sobre carga de la prueba; arts. 93 y 94 LGT sobre obtención de información). Basarse solo en la imputación del pagador, frente a la negación del perceptor y sin más comprobaciones, es insuficiente.
+		  Sobre la exención del art. 7.p LIRPF: la carga de probar los hechos constitutivos de la exención recae en el contribuyente (art. 105.1 LGT). Ahora bien, su valoración exige un análisis que no cabe en verificación de datos. Procedía reconducir a un procedimiento adecuado y motivar la decisión (arts. 103 y 137 LGT).</p>
+        </details>
+      </article>
+
+      <article class="panel">
+        <h3>b) Estado de suspensión de la deuda (alternativas 2, 3 y 4)</h3>
+        <ul>
+          <li><strong>Suspensión automática/condicionada</strong> en vía administrativa o económico-administrativa (arts. 224-233 LGT; RGR): requisitos, garantías y efectos.</li>
+          <li><strong>Alternativa 2</strong>: Efectos de la solicitud de aplazamiento y, en su caso, de la aportación de garantía suficiente.</li>
+          <li><strong>Alternativa 3</strong>: Suspensión en reposición o en reclamación TEA/TEAC con o sin garantía; alcance sobre recaudación en vía ejecutiva.</li>
+          <li><strong>Alternativa 4</strong>: Suspensión por aportación de garantía y vigencia hasta resolución firme.</li>
+        </ul>
+        <details>
+          <summary>Insertar aquí la conclusión caso por caso</summary>
+          <p>
+		  a) Importes en cada alternativa Dado que no se facilitan cifras concretas, indico la regla aplicable:
+
+		Alternativa 1 (pago cuando haya tesorería): 
+		• Si se paga dentro del plazo de ingreso concedido en la providencia de apremio: principal + recargo de apremio reducido del 10%, sin intereses de demora ni costas (arts. 161, 167 y 163 LGT; art. 62.5 LGT). 
+		• Si se paga después de ese plazo: principal + recargo de apremio ordinario del 20% + intereses de demora devengados desde el inicio del período ejecutivo hasta el pago + costas del procedimiento (arts. 161, 163 y 167 LGT; arts. 72 y ss. RGR).
+
+		Alternativa 2 (aplazamiento 2 años con hipoteca cuyo valor no cubre la garantía): 
+		• Deuda aplazable: la existente en el momento de la solicitud en período ejecutivo. Si se solicita dentro del plazo de la providencia, incluye el recargo reducido del 10%; si se solicita tras dicho plazo, incluye el recargo ordinario del 20%. En ambos casos devengará intereses de demora del aplazamiento durante todo el plazo concedido (arts. 65 y 26 LGT). 
+		• Importe a garantizar: debe cubrir la totalidad de la deuda aplazable (principal + recargo que proceda), los intereses de demora previstos hasta el vencimiento del aplazamiento y las costas previsibles. Para aval/seguro de caución se exige habitualmente, como regla técnica, el 125% de la deuda para cubrir intereses y costas; para hipoteca/prenda, la garantía debe ser suficiente en esos términos (arts. 82.2 LGT y 48, 50 y 53 RGR). Con la información dada, la hipoteca ofrecida es insuficiente.
+
+		Alternativa 3 (pago en especie mediante obra de arte): 
+		• Solo cabe si se trata de dación en pago de bienes del Patrimonio Histórico Español en los términos legalmente previstos y previa aceptación por la Administración competente. Si se acepta, el importe cancelado será el valor acordado del bien aplicado a la deuda; mientras no se acepte, debe considerarse impagada (art. 60.2 LGT y normativa específica de dación de bienes del Patrimonio Histórico).
+
+		Alternativa 4 (reclamación económico-administrativa contra la providencia con solicitud de suspensión y hipoteca insuficiente): 
+		• Importe a garantizar para la suspensión: principal + intereses de demora previsibles + recargos y costas (art. 233 LGT y arts. 40 y ss. RD 520/2005). La hipoteca ofrecida no alcanza; la garantía es insuficiente.
+
+		b) Suspensión o no de la deuda en las alternativas 2, 3 y 4
+
+		Alternativa 2 (aplazamiento): 
+		• La mera solicitud no suspende la ejecución salvo que se aporte garantía suficiente en los términos del art. 82 LGT. Con garantía insuficiente (como en el caso), no hay suspensión automática; la recaudación puede continuar hasta que se subsane y se acepte la garantía (arts. 65.5 y 82 LGT; arts. 46 y ss. RGR).
+
+		Alternativa 3 (pago en especie): 
+		• La solicitud de dación en pago no suspende por sí sola el procedimiento de apremio; solo si y cuando se acepta la dación por el órgano competente se extingue la deuda en la cuantía aceptada (art. 60.2 LGT). Hasta entonces, no hay suspensión y la recaudación puede proseguir.
+
+		Alternativa 4 (reclamación TEA con suspensión y hipoteca insuficiente): 
+		• No hay suspensión automática. La suspensión automática solo opera con aval/seguro de caución o depósito en efectivo/valores públicos por el importe exigido (art. 233.3 LGT). Con otras garantías (p. ej., hipoteca), el TEA puede conceder la suspensión si la garantía es suficiente (art. 233.4 LGT). Con garantía insuficiente, la suspensión será denegada y la recaudación puede continuar. Mientras el TEA decide sobre la suspensión, la Administración puede mantener o adoptar medidas cautelares para asegurar el cobro (art. 233.8 y 10 LGT).
+
+		c) Actuaciones de recaudación y otros órganos en las alternativas 2, 3 y 4
+
+		Alternativa 2 (aplazamiento): 
+		• Recaudación: comprobar admisibilidad, requerir, en su caso, subsanación y mejora de garantía; valorar y, si procede, aceptar y formalizar la hipoteca (notaría/registro) o denegar por insuficiencia; calcular intereses de demora del aplazamiento; dictar resolución (arts. 65 y 82 LGT; arts. 46-54 RGR). 
+		• Otros: intervención de notaría y Registro de la Propiedad para la hipoteca; en su caso, órgano competente para resolver por cuantía.
+
+		Alternativa 3 (pago en especie): 
+		• Recaudación: tramitar la solicitud y remitir al órgano competente (Hacienda/Patrimonio y Cultura) para valoración y eventual aceptación; continuar recaudación mientras no exista aceptación (art. 60.2 LGT). • Otros: órganos de Cultura/Patrimonio para calificación y valoración; Ministerio competente para la aceptación.
+
+		Alternativa 4 (reclamación con suspensión): 
+		• Recaudación: formar expediente y remitir al TEA; informar sobre la suspensión; en su caso, requerir mejora de garantía; mantener/adoptar medidas cautelares mientras se resuelve la suspensión (arts. 233 y 239 LGT; RD 520/2005). 
+		• TEAR: resolver sobre la suspensión (conceder si la garantía es suficiente o por otras causas legales) y, en su momento, sobre el fondo de la reclamación.
+		  </p>
+        </details>
+      </article>
+
+      <article class="panel">
+        <h3>c) Actuaciones de recaudación y otros órganos</h3>
+        <ul>
+          <li><strong>Recaudación</strong>: emisión de providencia de apremio; gestión de garantías; cálculo de recargos e intereses; en su caso, anotaciones preventivas y medidas cautelares (arts. 81-82, 162, 170 LGT; 69 y ss. RGR).</li>
+          <li><strong>Órganos de gestión/inspección</strong>: coordinación sobre cambios en la deuda tras recursos o rectificaciones.</li>
+          <li><strong>Órganos de revisión (TEA/TEAC)</strong>: adopción de medidas de suspensión; control de suficiencia y eficacia de garantías (arts. 233 LGT, RD 520/2005).</li>
+        </ul>
+        <details>
+          <summary>Insertar aquí el flujo procedimental completo</summary>
+          <p>[Pega el desarrollo paso a paso de actuaciones que tu solución anterior describía para alternativas 2, 3 y 4, incluyendo plazos y notificaciones conforme a LPAC y RGR].</p>
+        </details>
+      </article>
+    </section>
+
+    <section id="instrucciones">
+      <h2>Instrucciones finales y notas</h2>
+      <ul>
+        <li>Este archivo es autosuficiente: no usa frameworks ni recursos externos. Se puede imprimir o convertir a PDF desde el navegador.</li>
+        <li>Para editar títulos y contenidos, reemplaza los textos entre corchetes o dentro de cada <em>details</em>.</li>
+        <li>Si necesitas añadir más preguntas, duplica un bloque <code>&lt;article class="panel"&gt;…&lt;/article&gt;</code>.</li>
+      </ul>
+      <p class="meta">Si deseas que incruste aquí exactamente la “solución anterior” completa, pégala en tu siguiente mensaje y la devuelvo integrada en esta misma estructura, lista para publicar.</p>
+    </section>
+
+    <footer>
+      <div>© Preparación técnico tributario — Agencia Tributaria Canaria. Este recurso es meramente informativo y no constituye asesoramiento jurídico.</div>
+    </footer>
+  </main>
+
+  <script>
+    // Fecha legible “hoy” con zona local
+    (function(){
+      try{
+        var el = document.getElementById('today');
+        var d = new Date();
+        var fmt = new Intl.DateTimeFormat(navigator.language || 'es-ES', { year:'numeric', month:'2-digit', day:'2-digit' });
+        el.textContent = fmt.format(d);
+      }catch(e){}
+    })();
+  </script>
+</body>
+</html>
